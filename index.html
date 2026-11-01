@@ -21,7 +21,7 @@
       <div class="trip-context"><span class="context-arrow">↔</span> GUINDY <span class="muted">to</span> PERUNGALATHUR</div>
       <div class="routine-pill"><span>♡</span> Evening Routine: 18:30 – 19:15</div>
       <div class="top-spacer"></div>
-      <div class="live-indicator"><span class="pulse"></span> Live <span class="muted">•</span> 24s ago</div>
+      <div class="live-indicator"><span class="pulse"></span> Preview <span class="muted">•</span> sample data</div>
       <time class="clock" id="clock">18:44:12 IST</time>
       <button class="icon-button" aria-label="Save journey" id="saveTrip">♡</button>
     </header>
@@ -48,10 +48,10 @@
         </div>
       </section>
 
-      <section class="hero-panel" id="journey">
+      <div class="preview-note"><strong>Interactive prototype</strong><span>Route, crowd, timetable and train-position values are illustrative. Railway feeds, live GPS and server-backed alerts are not connected yet.</span></div>\n      <section class="hero-panel" id="journey">
         <div class="hero-main">
           <div class="hero-copy">
-            <div class="hero-badges"><span class="soft-badge">● Live GPS tracking (active)</span><span class="soft-badge">Timetable verified Oct 2026</span><span class="handwritten">sweet updates</span><span class="tiny-muted">· CRIS NTES 35s ago</span></div>
+            <div class="hero-badges"><span class="soft-badge">● GPS preview · not connected</span><span class="soft-badge">Illustrative timetable</span><span class="handwritten">sweet updates</span><span class="tiny-muted">· no external feed</span></div>
             <h1><span id="originTitle">Chennai Beach</span> <span class="route-arrow">→</span> <span id="destTitle">Tambaram – Chengalpattu Local</span></h1>
             <p>12-Coach High-Capacity Suburban Electric Multiple Unit. Calling tenderly at all intermediate halts via Mainline South.</p>
           </div>
@@ -79,7 +79,7 @@
                 <circle cx="370" cy="133" r="9" class="train-dot"/><circle cx="370" cy="133" r="21" class="train-pulse"/>
               </svg>
               <div class="map-station station-a">●</div><div class="map-station station-b">●</div><div class="map-station station-c">●</div>
-              <div class="map-caption"><span>ACTIVE SIGNAL BLOCK 14B</span><strong>Crossing Inner Ring Road Flyover</strong></div>
+              <div class="map-caption"><span>SIMULATED SIGNAL BLOCK</span><strong>Crossing Inner Ring Road Flyover</strong></div>
               <div class="map-pin">▣</div>
             </div>
             <div class="snapshot-row"><span>St. Thomas Mount overpass view</span><small>6:46 PM<br>snapshot</small></div>
@@ -95,7 +95,7 @@
 
         <div class="right-column">
           <article class="surface timetable-card">
-            <div class="section-heading timeline-title"><div><h2>Halt Radar &amp; Timings <em>our journey halts ♡</em></h2><p>10 Scheduled Stoppages · Commute Milestones Highlighted</p></div><span class="tag">♡ LIVE SYNC</span></div>
+            <div class="section-heading timeline-title"><div><h2>Halt Radar &amp; Timings <em>our journey halts ♡</em></h2><p>10 Sample Stoppages · Illustrative Commute Timeline</p></div><span class="tag">♡ DEMO DATA</span></div>
             <div class="timeline" id="timeline"></div>
           </article>
         </div>
@@ -108,7 +108,7 @@
           <button class="button button-outline alarm-button" id="arrivalAlarm">♧ Arrival alarm</button>
           <button class="button button-dark" id="broadcast">♡ Broadcast status⌄</button>
         </div>
-        <div class="tracker-live"><span class="live-pill">LIVE POSITION:</span> Approaching Guindy–Mount Overpass <strong>42 km/h</strong></div>
+        <div class="tracker-live"><span class="live-pill">PREVIEW POSITION:</span> Approaching Guindy–Mount Overpass <strong>42 km/h</strong></div>
         <div class="station-list" id="stationList"></div>
       </section>
 
@@ -147,12 +147,12 @@
         <div class="train-list" id="trainList"></div>
 
         <section class="feature-grid">
-          <article class="surface feature-card"><img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1100&q=85" alt="Rail corridor at dusk" loading="lazy"><div class="feature-copy"><span class="eyebrows red">STATION FACILITY TELEMETRY</span><em>memories of Guindy</em><h3>Guindy Multi-Modal Hub</h3><p>Direct escalator connections to Blue Line Metro concourse, MTC bus bays along GST Road, and suburban ticket booking counters.</p></div></article>
-          <article class="surface feature-card"><img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1100&q=85" alt="Elevated urban transit corridor" loading="lazy"><div class="feature-copy"><span class="eyebrows red">CORRIDOR INFRASTRUCTURE</span><em>evening viaduct</em><h3>Alandur &amp; South Elevated Extension</h3><p>Dual-level interchange enabling fast transfers between Blue Line corridor to Chennai Airport and Green Line corridor to Central Station.</p></div></article>
+          <article class="surface feature-card"><img src="https://media.newindianexpress.com/TNIE/import/2022/3/7/original/guindy-overbridge.jpg?ar=40%3A21&auto=format%2Ccompress&enlarge=true&mode=crop&ogImage=true&overlay=false&overlay_position=bottom&overlay_width=100&w=1200" alt="Chennai suburban train at Guindy railway station" loading="lazy"><div class="feature-copy"><span class="eyebrows red">STATION FACILITY TELEMETRY</span><em>memories of Guindy</em><h3>Guindy Multi-Modal Hub</h3><p>Direct escalator connections to Blue Line Metro concourse, MTC bus bays along GST Road, and suburban ticket booking counters.</p></div></article>
+          <article class="surface feature-card"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Alstom_Metropolis_train-set_at_Guindy_Metro_station_in_Chennai.jpg" alt="Chennai Metro train at Guindy station" loading="lazy"><div class="feature-copy"><span class="eyebrows red">CORRIDOR INFRASTRUCTURE</span><em>evening viaduct</em><h3>Alandur &amp; South Elevated Extension</h3><p>Dual-level interchange enabling fast transfers between Blue Line corridor to Chennai Airport and Green Line corridor to Central Station.</p></div></article>
         </section>
       </section>
     </main>
-    <footer><span class="brand-script">Aashii’s Rafiq</span><span>Chennai Suburban, MRTS &amp; Metro Hub</span><span class="footer-status">● Feeds Nominal</span><em>with love</em><small>© 2025 Transit Authority Standard</small></footer>
+    <footer><span class="brand-script">Aashii’s Rafiq</span><span>Chennai Suburban, MRTS &amp; Metro Hub</span><span class="footer-status">● Demo preview</span><em>with love</em><small>© 2025 Transit Authority Standard</small></footer>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="app.js"></script>
