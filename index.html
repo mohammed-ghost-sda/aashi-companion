@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f2ec">
+  <meta name="description" content="Aashii's Rafiq — a thoughtful companion for Chennai's suburban trains, metro and city journeys.">
+  <title>Aashii's Rafiq — Chennai Transit Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Aashii's Rafiq home">
+        <span class="brand-script">Aashii’s Rafiq <i>♡</i></span>
+        <span class="brand-sub">KEEPSAKE TRANSIT COMPANION</span>
+      </a>
+      <div class="trip-context"><span class="context-arrow">↔</span> GUINDY <span class="muted">to</span> PERUNGALATHUR</div>
+      <div class="routine-pill"><span>♡</span> Evening Routine: 18:30 – 19:15</div>
+      <div class="top-spacer"></div>
+      <div class="live-indicator"><span class="pulse"></span> Live <span class="muted">•</span> 24s ago</div>
+      <time class="clock" id="clock">18:44:12 IST</time>
+      <button class="icon-button" aria-label="Save journey" id="saveTrip">♡</button>
+    </header>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#journey" class="active">Now</a>
+      <a href="#journey">Train detail</a>
+      <a href="#timetables">Timetables</a>
+      <a href="#plan">Plan</a>
+      <a href="#states">Key states matrix</a>
+      <span class="nav-note">with love · Chennai Transit</span>
+    </nav>
+
+    <main id="home">
+      <section class="journey-toolbar">
+        <button class="back-button" aria-label="Go back">←</button>
+        <div class="toolbar-route">
+          <div class="eyebrows"><span class="rail-tag">SOUTHERN RAILWAY</span> MSB–TBM CORRIDOR <em>evening commute</em></div>
+          <div class="train-name">EMU Suburban 40542</div>
+        </div>
+        <div class="toolbar-actions">
+          <button class="button button-outline" id="invertRoute">↔ Invert origin/dest</button>
+          <button class="button button-dark" id="shareTrip">♡ Share live trip</button>
+        </div>
+      </section>
+
+      <section class="hero-panel" id="journey">
+        <div class="hero-main">
+          <div class="hero-copy">
+            <div class="hero-badges"><span class="soft-badge">● Live GPS tracking (active)</span><span class="soft-badge">Timetable verified Oct 2026</span><span class="handwritten">sweet updates</span><span class="tiny-muted">· CRIS NTES 35s ago</span></div>
+            <h1><span id="originTitle">Chennai Beach</span> <span class="route-arrow">→</span> <span id="destTitle">Tambaram – Chengalpattu Local</span></h1>
+            <p>12-Coach High-Capacity Suburban Electric Multiple Unit. Calling tenderly at all intermediate halts via Mainline South.</p>
+          </div>
+          <div class="hero-metrics">
+            <div><span class="metric-label">VELOCITY</span><strong>42 <small>km/h</small></strong><span class="metric-foot">⌄ Steady throttle</span></div>
+            <div><span class="metric-label">NEXT HALT</span><strong class="metric-place">St. Thomas Mount</strong><span class="metric-foot">ETA 18:48 (+3m)</span></div>
+            <div class="delay-tile"><span class="metric-label">PUNCTUALITY</span><strong>♡ Amber Delay <small>(+3m)</small></strong><span class="metric-foot">Gentle clearance</span></div>
+          </div>
+        </div>
+        <div class="coach-section">
+          <div class="coach-heading"><strong>▣ 12-COACH RAKE COMPOSITION &amp; CROWD LOAD</strong><em>our cozy compartments</em><span class="coach-legend"><i class="dot ladies"></i> Ladies Coach <i class="dot general"></i> General Class <i class="dot dense"></i> High Density</span></div>
+          <div class="coach-grid" id="coachGrid"></div>
+        </div>
+      </section>
+
+      <section class="journey-grid">
+        <div class="left-column">
+          <article class="surface map-card">
+            <div class="section-heading"><h2>◎ Spatial Track Radar</h2><span class="tag">Guindy → STM Block</span></div>
+            <div class="map-visual" role="img" aria-label="Stylised Chennai route map with live train position">
+              <div class="map-label label-one">ANNA NAGAR</div><div class="map-label label-two">EGMORE</div><div class="map-label label-three">SAIDAPET</div>
+              <svg class="map-lines" viewBox="0 0 600 270" preserveAspectRatio="none" aria-hidden="true">
+                <g class="streets"><path d="M-20 52 L155 15 265 86 405 45 620 86 M-10 130 L120 92 240 158 380 120 610 170 M20 245 L160 190 280 235 435 180 610 230 M90 -10 L130 280 M250 -10 L290 280 M420 -10 L390 280 M520 -10 L480 280"/></g>
+                <path class="rail-line" d="M22 236 C100 220 120 175 205 166 S320 120 370 133 S470 82 585 53"/>
+                <circle cx="370" cy="133" r="9" class="train-dot"/><circle cx="370" cy="133" r="21" class="train-pulse"/>
+              </svg>
+              <div class="map-station station-a">●</div><div class="map-station station-b">●</div><div class="map-station station-c">●</div>
+              <div class="map-caption"><span>ACTIVE SIGNAL BLOCK 14B</span><strong>Crossing Inner Ring Road Flyover</strong></div>
+              <div class="map-pin">▣</div>
+            </div>
+            <div class="snapshot-row"><span>St. Thomas Mount overpass view</span><small>6:46 PM<br>snapshot</small></div>
+            <button class="save-snapshot" aria-label="Save snapshot">♡</button>
+          </article>
+
+          <article class="surface facility-card" id="states">
+            <div class="section-heading"><h3>REAL-TIME FACILITY ALERTS</h3><em>care &amp; comfort</em></div>
+            <div class="alert-row"><span class="alert-icon">♿</span><div><strong>Escalator Status at Guindy (PF 2)</strong><small>Fully operational connecting Foot-Over-Bridge #2</small></div></div>
+            <div class="alert-row"><span class="alert-icon">↗</span><div><strong>Perungalathur Road Work</strong><small>GST Road southern pedestrian subway queue heavy (+8m transfer)</small></div></div>
+          </article>
+        </div>
+
+        <div class="right-column">
+          <article class="surface timetable-card">
+            <div class="section-heading timeline-title"><div><h2>Halt Radar &amp; Timings <em>our journey halts ♡</em></h2><p>10 Scheduled Stoppages · Commute Milestones Highlighted</p></div><span class="tag">♡ LIVE SYNC</span></div>
+            <div class="timeline" id="timeline"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="tracker surface" id="plan">
+        <div class="tracker-head">
+          <div class="current-station"><span class="station-avatar">STM<small>PF 1</small></span><div><strong>St. Thomas Mount <span class="delay-chip">+3M AMBER</span></strong><small>In 4 mins · 2.4 km remaining · Speed 42 km/h</small></div></div>
+          <div class="tracker-progress"><small>TRIP PROGRESS</small><strong>6 / 10 Stations Cleared</strong></div>
+          <button class="button button-outline alarm-button" id="arrivalAlarm">♧ Arrival alarm</button>
+          <button class="button button-dark" id="broadcast">♡ Broadcast status⌄</button>
+        </div>
+        <div class="tracker-live"><span class="live-pill">LIVE POSITION:</span> Approaching Guindy–Mount Overpass <strong>42 km/h</strong></div>
+        <div class="station-list" id="stationList"></div>
+      </section>
+
+      <section class="directory" id="timetables">
+        <div class="directory-heading">
+          <div><span class="eyebrows red">▧ OPERATIONAL MASTER DIRECTORY · Section 4.3</span><h2>Timetables &amp; Route Telemetry</h2><p>Live cross-modal schedules across Southern Railway Suburban network, South Line Expresses, and CMRL Blue &amp; Green elevated corridor lines.</p></div>
+          <div class="verify-badges"><span>◉ VERIFIED OCT 2026 SCHEDULE</span><span>⊙ CACHED OFFLINE (14.2 MB)</span></div>
+        </div>
+        <div class="mode-switch" role="tablist" aria-label="Transport mode">
+          <button class="mode-tab selected" data-mode="suburban">▣ Chennai Beach Suburban</button>
+          <button class="mode-tab" data-mode="express">▤ Express Trains (South Line)</button>
+          <button class="mode-tab" data-mode="metro">▣ Chennai Metro (Blue &amp; Green)</button>
+        </div>
+        <div class="search-panel">
+          <label class="search-box"><span>⌕</span><input id="trainSearch" type="search" placeholder="Search train by number (e.g., ‘40542’, ‘MS–TBM’) or station (Guindy, Tambaram)…"></label>
+          <button class="filter-chip" id="nextHour">◷ Next 60 mins</button>
+          <button class="filter-chip" id="directFilter">⚑ Direct Perungalathur</button>
+          <button class="filter-chip" id="ladiesFilter">♙ Ladies special</button>
+          <div class="search-meta"><span><strong>14</strong> Active Corridor Runs Visible　· Frequency Band: Peak (Every 8m) / Non-Peak (15m)</span><strong>● ALL TIMINGS SYNCHRONIZED WITH SR HEADWAY CONTROL</strong></div>
+        </div>
+
+        <div class="route-overview">
+          <article class="surface corridor-card">
+            <div class="section-heading"><span class="eyebrows red">SOUTH TRUNK LINE BACKBONE <em>golden corridor</em></span><span class="tag">Oct 2026 Table-12</span></div>
+            <h2>Chennai Beach (MSB) ↔ Tambaram ↔ Chengalpattu</h2>
+            <p>Primary suburban commuter channel handling 400+ daily runs through Guindy, Chromepet, Tambaram, and Perungalathur nodes.</p>
+            <div class="headway-chart">
+              <div class="chart-head"><span>PEAK FLEET HEADWAY PROFILE (GUINDY PLATFORM 4)</span><strong>CURRENT WINDOW: 18:30 – 20:00</strong></div>
+              <svg viewBox="0 0 700 105" preserveAspectRatio="none" aria-label="Peak headway profile chart"><defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#bf5368" stop-opacity=".23"/><stop offset="1" stop-color="#bf5368" stop-opacity="0"/></linearGradient></defs><path d="M0 78 L60 70 125 42 180 28 230 25 285 31 345 29 405 33 470 48 530 61 590 76 650 87 700 91 L700 105 L0 105Z" fill="url(#chartFill)"/><path d="M0 78 L60 70 125 42 180 28 230 25 285 31 345 29 405 33 470 48 530 61 590 76 650 87 700 91" fill="none" stroke="#bf5368" stroke-width="3"/><circle cx="230" cy="25" r="5" fill="#813d4b"/></svg>
+              <div class="chart-times"><span>17:00</span><span>18:00</span><strong>18:45 NOW</strong><span>19:30</span><span>21:00</span></div>
+            </div>
+          </article>
+          <aside class="hub-card"><span class="eyebrows">TARGET HUB</span><em>rendezvous</em><h2>Perungalathur Junction</h2><p>Key interchange for Southern outbound MTC buses and suburban transfer platforms.</p><div class="hub-stat"><span>From Guindy:</span><strong>24 mins avg</strong></div><div class="hub-stat"><span>Next Fast EMU:</span><strong>18:52 (PF 4)</strong></div></aside>
+        </div>
+
+        <div class="train-list" id="trainList"></div>
+
+        <section class="feature-grid">
+          <article class="surface feature-card"><img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1100&q=85" alt="Rail corridor at dusk" loading="lazy"><div class="feature-copy"><span class="eyebrows red">STATION FACILITY TELEMETRY</span><em>memories of Guindy</em><h3>Guindy Multi-Modal Hub</h3><p>Direct escalator connections to Blue Line Metro concourse, MTC bus bays along GST Road, and suburban ticket booking counters.</p></div></article>
+          <article class="surface feature-card"><img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1100&q=85" alt="Elevated urban transit corridor" loading="lazy"><div class="feature-copy"><span class="eyebrows red">CORRIDOR INFRASTRUCTURE</span><em>evening viaduct</em><h3>Alandur &amp; South Elevated Extension</h3><p>Dual-level interchange enabling fast transfers between Blue Line corridor to Chennai Airport and Green Line corridor to Central Station.</p></div></article>
+        </section>
+      </section>
+    </main>
+    <footer><span class="brand-script">Aashii’s Rafiq</span><span>Chennai Suburban, MRTS &amp; Metro Hub</span><span class="footer-status">● Feeds Nominal</span><em>with love</em><small>© 2025 Transit Authority Standard</small></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
